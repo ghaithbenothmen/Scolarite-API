@@ -1,12 +1,14 @@
-package com.project.services;
+package com.project.scolarite.services;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import com.project.entities.Apprenant;
-import com.project.repos.ApprenantRepository;
+import com.project.scolarite.entities.Apprenant;
+import com.project.scolarite.repos.ApprenantRepository;
 
+@Service
 public class ApprenantServicesImpl implements ApprenantServices{
 
 	@Autowired
@@ -31,13 +33,13 @@ public class ApprenantServicesImpl implements ApprenantServices{
 	}
 
 	@Override
-	public void deletApprenantById(long id) {
+	public void deletApprenantById(Long id) {
 		// TODO Auto-generated method stub
 		apprenantRepository.deleteById( id);
 	}
 
 	@Override
-	public Apprenant getApprenant(long id) {
+	public Apprenant getApprenant(Long id) {
 		// TODO Auto-generated method stub
 		return apprenantRepository.findById(id).get();
 	}
@@ -47,5 +49,8 @@ public class ApprenantServicesImpl implements ApprenantServices{
 		// TODO Auto-generated method stub
 		return apprenantRepository.findAll();
 	}
+
+	
+	
 
 }
